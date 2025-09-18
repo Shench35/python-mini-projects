@@ -1,15 +1,19 @@
 # Import Required Library
 from tkinter import *
+import customtkinter as ctk
 import datetime
 import time
 import winsound
 from threading import *
 
 # Create Object
-root = Tk()
+root = ctk.CTk()
 
 # Set geometry
 root.geometry("400x200")
+
+# Set title
+root.title("Alarm Clock")
 
 # Use Threading
 def Threading():
@@ -36,8 +40,8 @@ def alarm():
 			winsound.PlaySound("sound.wav",winsound.SND_ASYNC)
 
 # Add Labels, Frame, Button, Optionmenus
-Label(root,text="Alarm Clock",font=("Helvetica 20 bold"),fg="red").pack(pady=10)
-Label(root,text="Set Time",font=("Helvetica 15 bold")).pack()
+ctk.CTkLabel(root,text="Alarm Clock",font=("Helvetica", 20 ,"bold")).pack(pady=10)
+ctk.CTkLabel(root,text="Set Time",font=("Helvetica",15,"bold")).pack()
 
 frame = Frame(root)
 frame.pack()
